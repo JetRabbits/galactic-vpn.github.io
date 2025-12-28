@@ -1,128 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Internationalization (i18n)
-    const translations = {
-        en: {
-            nav_features: "Features",
-            nav_pricing: "Pricing",
-            nav_contact: "Contact",
-            cta_get_started: "Get Started",
-            hero_title: "Explore the Internet <br><span class=\"gradient-text\">Without Limits</span>",
-            hero_subtitle: "The fastest, most secure VPN in the galaxy. Protect your data with military-grade encryption while traveling at light speed.",
-            hero_cta: "Launch Mission",
-            hero_learn_more: "Learn More",
-            features_title: "Galactic Features",
-            feature_speed_title: "Light Speed",
-            feature_speed_desc: "Experience blazing fast connection speeds optimized for streaming and gaming anywhere in the universe.",
-            feature_security_title: "Star-Grade Security",
-            feature_security_desc: "Your data is locked behind an event horizon of encryption. No one can see what you do.",
-            feature_global_title: "Universal Access",
-            feature_global_desc: "Connect to servers across the globe. Bypass geo-restrictions like a wormhole.",
-            pricing_title: "Choose Your Vessel",
-            plan_1_day: "VPN 1 Day",
-            plan_1_month: "VPN 1 Month",
-            plan_6_months: "VPN 6 Months",
-            plan_1_year: "VPN 1 Year",
-            discount_25: "-25%",
-            discount_50: "-50%",
-            price_label: "Subscription price:",
-            plan_select: "Select Plan",
-            feature_learn_more: "Learn More",
-            telegram_stars: "Telegram Stars",
-            ua_title: "Smart Routing Technology",
-            ua_description: "You connect to your nearest local server. It routes your traffic globally based on the destination address, while local resources like government portals, tax websites, and local sites remain functional and your traffic stays within your country.",
-            ua_user_label: "Your Device",
-            ua_router_label: "Smart Router",
-            ua_local_label: "Local / Gov Sites",
-            ua_global_label: "Global Web",
-            security_title: "Stellar Security Standards",
-            security_description: "We use the highest encryption standards to protect your data in transit, ensuring privacy and integrity across the galaxy.",
-            sec_item_1_title: "1. Symmetric Encryption",
-            sec_item_1_content: "ChaCha20: 256-bit key, optimal for mobile devices, resistant to timing attacks.",
-            sec_item_2_title: "2. Message Authentication",
-            sec_item_2_content: "Poly1305: MAC used with ChaCha20. Ensures data integrity and authenticity.",
-            sec_item_3_title: "3. Key Exchange",
-            sec_item_3_content: "Curve25519: X25519 elliptic curve. Fast and secure key establishment.",
-            sec_item_4_title: "4. Hash Function",
-            sec_item_4_content: "BLAKE2s: Modern fast hash, used for KDF and handshake authentication.",
-            sec_item_5_title: "5. Key Production",
-            sec_item_5_content: "HKDF: Based on BLAKE2s. Provides Forward Secrecy and session key rotation.",
-            sec_data_label: "Raw Data",
-            sec_encrypt_label: "Encryption",
-            sec_secure_label: "Secured",
-            ls_title: "Light Speed Technology",
-            ls_description: "Powered by the modern WireGuard protocol, our network provides the lowest latency and highest speeds in the galaxy.",
-            ls_item_1_title: "WireGuard Protocol",
-            ls_item_1_content: "Extreme efficiency and simplified codebase for maximum throughput.",
-            ls_item_2_title: "Global Network",
-            ls_item_2_content: "Strategically placed servers for minimized ping across all regions.",
-            ls_item_3_title: "Optimized for Media",
-            ls_item_3_content: "Buffer-free 4K streaming and low-latency competitive gaming.",
-            ls_client_label: "Client",
-            ls_server_label: "Server",
-            ls_speed_label: "Boost"
-        },
-        ru: {
-            nav_features: "Возможности",
-            nav_pricing: "Цены",
-            nav_contact: "Контакты",
-            cta_get_started: "Начать",
-            hero_title: "Интернет <br><span class=\"gradient-text\">Без Границ</span>",
-            hero_subtitle: "Самый быстрый и безопасный VPN в галактике. Защитите свои данные шифрованием военного уровня на световой скорости.",
-            hero_cta: "Запустить Миссию",
-            hero_learn_more: "Узнать Больше",
-            features_title: "Галактические Возможности",
-            feature_speed_title: "Световая Скорость",
-            feature_speed_desc: "Испытайте молниеносную скорость соединения, оптимизированную для стрииминга и игр в любой точке вселенной.",
-            feature_security_title: "Звездная Безопасность",
-            feature_security_desc: "Ваши данные скрыты за горизонтом событий шифрования. Никто не увидит, что вы делаете.",
-            feature_global_title: "Вселенский Доступ",
-            feature_global_desc: "Подключайтесь к серверам по всему миру. Обходите гео-блокировки как кротовую нору.",
-            pricing_title: "Выберите Ваш Корабль",
-            plan_1_day: "VPN 1 день",
-            plan_1_month: "VPN 1 месяц",
-            plan_6_months: "VPN 6 месяцев",
-            plan_1_year: "VPN 1 год",
-            discount_25: "скидка -25%",
-            discount_50: "скидка -50%",
-            price_label: "Цена подписки:",
-            plan_select: "Выбрать План",
-            feature_learn_more: "Узнать Больше",
-            telegram_stars: "Звёзды Telegram",
-            ua_title: "Технология Умной Маршрутизации",
-            ua_description: "Вы подключаетесь к своему ближайшему локальному серверу. А он маршрутизирует ваш трафик по миру в зависимости от адреса назначения, при этом локальные ресурсы в виде Госуслуг, Налоговой, локальных сайтов остаются рабочими и трафик не покидает вашу страну.",
-            ua_user_label: "Ваше Устройство",
-            ua_router_label: "Умный Роутер",
-            ua_local_label: "Госуслуги и Локальные Ресурсы",
-            ua_global_label: "Мировой Интернет",
-            security_title: "Стандарты Звездной Безопасности",
-            security_description: "Мы используем высочайшие стандарты шифрования для защиты ваших данных при передаче, обеспечивая конфиденциальность и целостность по всей галактике.",
-            sec_item_1_title: "1. Симметричное шифрование",
-            sec_item_1_content: "ChaCha20: 256-битный ключ, оптимален для мобильных устройств, устойчив к тайминг-атакам.",
-            sec_item_2_title: "2. Аутентификация сообщений",
-            sec_item_2_content: "Poly1305: MAC (Message Authentication Code). Обеспечивает целостность данных.",
-            sec_item_3_title: "3. Обмен ключами",
-            sec_item_3_content: "Curve25519 (X25519): Эллиптическая кривая. Очень быстрая и безопасная реализация.",
-            sec_item_4_title: "4. Хэш-функция",
-            sec_item_4_content: "BLAKE2s: Современный быстрый хэш. Быстрее SHA-2 на большинстве платформ.",
-            sec_item_5_title: "5. Производство ключей",
-            sec_item_5_content: "HKDF: На базе BLAKE2s. Обеспечивает Forward Secrecy и ротацию ключей.",
-            sec_data_label: "Данные",
-            sec_encrypt_label: "Шифрование",
-            sec_secure_label: "Защищено",
-            ls_title: "Технология Световой Скорости",
-            ls_description: "Наша сеть, основанная на современном протоколе WireGuard, обеспечивает минимальную задержку и самую высокую скорость в галактике.",
-            ls_item_1_title: "Протокол WireGuard",
-            ls_item_1_content: "Экстремальная эффективность и упрощенный код для максимальной пропускной способности.",
-            ls_item_2_title: "Глобальная Сеть",
-            ls_item_2_content: "Стратегически расположенные серверры для минимизации пинга во всех регионах.",
-            ls_item_3_title: "Оптимизировано для Медиа",
-            ls_item_3_content: "Стриминг 4K без буферизации и соревновательные игры с низкой задержкой.",
-            ls_client_label: "Клиент",
-            ls_server_label: "Сервер",
-            ls_speed_label: "Ускорение"
-        }
+    // Config
+    const config = {
+        botLink: "https://t.me/vpn_galactic_bot",
+        // You can add more config parameters here
     };
 
+    // Internationalization (i18n)
     const userLang = navigator.language || navigator.userLanguage;
     let currentLang = userLang && userLang.toLowerCase().includes('ru') ? 'ru' : 'en';
     const langToggleBtn = document.getElementById('lang-toggle');
@@ -141,6 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         langToggleBtn.textContent = currentLang === 'en' ? 'RU' : 'EN';
+
+        // Update Bot Links
+        document.querySelectorAll('[data-bot-link]').forEach(el => {
+            el.setAttribute('href', config.botLink);
+        });
 
         // Update Dynamic Prices
         if (typeof pricingConfig !== 'undefined' && typeof calculatePrices === 'function') {
