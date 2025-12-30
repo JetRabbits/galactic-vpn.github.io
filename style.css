@@ -411,6 +411,17 @@ nav {
     left: 85%;
 }
 
+.targets-column .node {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+}
+
+.targets-column .node:hover {
+    transform: scale(1.05);
+}
+
 .node-icon-bg {
     width: 60px;
     height: 60px;
@@ -432,12 +443,14 @@ nav {
 }
 
 .node span {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--text-muted);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-align: center;
+    line-height: 1.2;
+    max-width: 140px;
 }
 
 .router-node .node-icon-bg {
@@ -461,8 +474,8 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 60px;
-    width: 120px;
+    gap: 40px;
+    width: 160px;
 }
 
 .vpn-glow {
