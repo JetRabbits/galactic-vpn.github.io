@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+        document.documentElement.lang = currentLang;
         langToggleBtn.textContent = currentLang === 'en' ? 'RU' : 'EN';
 
         // Update Bot Links
