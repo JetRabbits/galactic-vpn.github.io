@@ -372,13 +372,14 @@ nav {
     position: relative;
     width: 100%;
     max-width: 600px;
-    height: 300px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    aspect-ratio: 2 / 1;
+    margin: 0 auto;
 }
 
 .node {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -389,7 +390,25 @@ nav {
 }
 
 .node:hover {
-    transform: scale(1.05);
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.client-node,
+.user-node,
+.data-node {
+    left: 15%;
+}
+
+.velocity-node,
+.router-node,
+.engine-node {
+    left: 50%;
+}
+
+.server-node,
+.targets-column,
+.secure-node {
+    left: 85%;
 }
 
 .node-icon-bg {
@@ -435,13 +454,15 @@ nav {
 }
 
 .targets-column {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 60px;
     width: 120px;
-    /* Give it a fixed width to ensure centering */
 }
 
 .vpn-glow {
@@ -520,7 +541,7 @@ nav {
     }
 
     .ua-visual {
-        height: 200px;
+        height: auto;
         margin-top: 40px;
     }
 }
