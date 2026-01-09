@@ -110,4 +110,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 yearSpan.textContent = new Date().getFullYear();
             });
     }
+
+    // Google Analytics Event Tracking
+    document.addEventListener('click', (e) => {
+        // Find the element with GA tracking attributes (could be the clicked element or a parent)
+        const target = e.target.closest('[data-ga-event]');
+
+        if (target) {
+            const eventName = target.getAttribute('data-ga-event');
+            const buttonName = target.getAttribute('data-ga-button');
+            const location = target.getAttribute('data-ga-location');
+
+            // Send event to Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, {
+                    'event_category': location || 'unspecified',
+                    'event_label': buttonName || 'unspecified',
+                    'button_name': buttonName,
+                    'button_location': location
+                });
+
+                console.log('GA Event:', {
+                    event: eventName,
+                    category: location,
+                    label: buttonName
+                });
+            } else {
+                console.warn('Google Analytics (gtag) not loaded');
+            }
+        }
+    });
 });

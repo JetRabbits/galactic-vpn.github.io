@@ -58,7 +58,9 @@
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', 'G-CSW6Y9EDZQ');
+        gtag('config', 'G-CSW6Y9EDZQ', {
+            'site_id': 'galactic-vpn'
+        });
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,19 +77,24 @@
 
     <header>
         <nav class="container">
-            <a href="https://t.me/vpn_galactic_bot" class="logo" data-bot-link>
+            <a href="https://t.me/vpn_galactic_bot" class="logo" data-bot-link data-ga-event="click"
+                data-ga-button="logo" data-ga-location="header">
                 <img src="assets/images/shield-icon.png" alt="Galactic VPN Logo" class="logo-icon">
                 <span>Galactic VPN</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#features" data-i18n="nav_features">Features</a></li>
-                <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
-                <li><a href="https://t.me/vpn_galactic_bot" data-i18n="nav_contact" data-bot-link>Contact</a></li>
+                <li><a href="#features" data-i18n="nav_features" data-ga-event="click" data-ga-button="features_nav"
+                        data-ga-location="header">Features</a></li>
+                <li><a href="#pricing" data-i18n="nav_pricing" data-ga-event="click" data-ga-button="pricing_nav"
+                        data-ga-location="header">Pricing</a></li>
+                <li><a href="https://t.me/vpn_galactic_bot" data-i18n="nav_contact" data-bot-link data-ga-event="click"
+                        data-ga-button="contact_nav" data-ga-location="header">Contact</a></li>
             </ul>
             <div class="header-actions">
-                <button id="lang-toggle" class="btn-secondary">RU</button>
-                <a href="https://t.me/vpn_galactic_bot" class="btn-primary" data-i18n="cta_get_started"
-                    data-bot-link>Get
+                <button id="lang-toggle" class="btn-secondary" data-ga-event="click" data-ga-button="language_toggle"
+                    data-ga-location="header">RU</button>
+                <a href="https://t.me/vpn_galactic_bot" class="btn-primary" data-i18n="cta_get_started" data-bot-link
+                    data-ga-event="click" data-ga-button="get_started" data-ga-location="header">Get
                     Started</a>
             </div>
         </nav>
@@ -101,10 +108,11 @@
                 <p data-i18n="hero_subtitle">The fastest, most secure VPN in the galaxy. Protect your data with
                     military-grade encryption while traveling at light speed.</p>
                 <div class="hero-btns">
-                    <a href="https://t.me/vpn_galactic_bot" class="btn-primary" data-i18n="hero_cta"
-                        data-bot-link>Launch
+                    <a href="https://t.me/vpn_galactic_bot" class="btn-primary" data-i18n="hero_cta" data-bot-link
+                        data-ga-event="click" data-ga-button="launch_mission" data-ga-location="hero">Launch
                         Mission</a>
-                    <a href="#features" class="btn-outline" data-i18n="hero_learn_more">Learn More</a>
+                    <a href="#features" class="btn-outline" data-i18n="hero_learn_more" data-ga-event="click"
+                        data-ga-button="learn_more" data-ga-location="hero">Learn More</a>
                 </div>
             </div>
         </section>
@@ -113,7 +121,8 @@
             <div class="container">
                 <h2 class="section-title" data-i18n="features_title">Galactic Features</h2>
                 <div class="features-grid">
-                    <a href="#light-speed" class="feature-card">
+                    <a href="#light-speed" class="feature-card" data-ga-event="click"
+                        data-ga-button="feature_light_speed" data-ga-location="features">
                         <div class="icon-wrapper">
                             <img src="assets/images/speed-icon.png" alt="Speed Icon">
                         </div>
@@ -122,7 +131,8 @@
                             streaming and gaming anywhere in the universe.</p>
                         <span class="learn-more" data-i18n="feature_learn_more">Learn More →</span>
                     </a>
-                    <a href="#stellar-security" class="feature-card">
+                    <a href="#stellar-security" class="feature-card" data-ga-event="click"
+                        data-ga-button="feature_security" data-ga-location="features">
                         <div class="icon-wrapper">
                             <img src="assets/images/lock-icon.png" alt="Security Icon">
                         </div>
@@ -131,7 +141,8 @@
                             No one can see what you do.</p>
                         <span class="learn-more" data-i18n="feature_learn_more">Learn More →</span>
                     </a>
-                    <a href="#smart-routing" class="feature-card">
+                    <a href="#smart-routing" class="feature-card" data-ga-event="click"
+                        data-ga-button="feature_universal_access" data-ga-location="features">
                         <div class="icon-wrapper">
                             <img src="assets/images/shield-icon.png" alt="Global Icon">
                         </div>
@@ -439,7 +450,8 @@
                         <div class="price" data-price-type="fiat"></div>
                         <div class="price-sub" data-price-type="trx"></div>
                         <a href="https://t.me/vpn_galactic_bot" class="btn-outline" data-i18n="plan_select"
-                            data-bot-link>Select Plan</a>
+                            data-bot-link data-ga-event="click" data-ga-button="select_plan_1_day"
+                            data-ga-location="pricing">Select Plan</a>
                     </div>
                     <!-- Pricing Card 2 (1 Month) -->
                     <div class="pricing-card" data-plan-id="1_month">
@@ -448,7 +460,8 @@
                         <div class="price" data-price-type="fiat"></div>
                         <div class="price-sub" data-price-type="trx"></div>
                         <a href="https://t.me/vpn_galactic_bot" class="btn-outline" data-i18n="plan_select"
-                            data-bot-link>Select Plan</a>
+                            data-bot-link data-ga-event="click" data-ga-button="select_plan_1_month"
+                            data-ga-location="pricing">Select Plan</a>
                     </div>
                     <!-- Pricing Card 3 (6 Months) -->
                     <div class="pricing-card featured" data-plan-id="6_months">
@@ -458,7 +471,8 @@
                         <div class="price" data-price-type="fiat"></div>
                         <div class="price-sub" data-price-type="trx"></div>
                         <a href="https://t.me/vpn_galactic_bot" class="btn-primary" data-i18n="plan_select"
-                            data-bot-link>Select Plan</a>
+                            data-bot-link data-ga-event="click" data-ga-button="select_plan_6_months"
+                            data-ga-location="pricing">Select Plan</a>
                     </div>
                     <!-- Pricing Card 4 (1 Year) -->
                     <div class="pricing-card featured" data-plan-id="1_year">
@@ -468,7 +482,8 @@
                         <div class="price" data-price-type="fiat"></div>
                         <div class="price-sub" data-price-type="trx"></div>
                         <a href="https://t.me/vpn_galactic_bot" class="btn-primary" data-i18n="plan_select"
-                            data-bot-link>Select Plan</a>
+                            data-bot-link data-ga-event="click" data-ga-button="select_plan_1_year"
+                            data-ga-location="pricing">Select Plan</a>
                     </div>
                 </div>
             </div>
@@ -477,7 +492,8 @@
 
     <footer>
         <div class="container footer-content">
-            <a href="https://t.me/vpn_galactic_bot" class="footer-logo" data-bot-link>
+            <a href="https://t.me/vpn_galactic_bot" class="footer-logo" data-bot-link data-ga-event="click"
+                data-ga-button="footer_logo" data-ga-location="footer">
                 <span>Galactic VPN</span>
             </a>
             <p class="copyright">&copy; <span id="current-year">2024</span> Galactic VPN. All rights reserved.</p>
